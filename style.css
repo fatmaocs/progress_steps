@@ -1,1 +1,110 @@
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+  }
 
+.body
+{
+    margin: 0;
+   
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;}
+
+.progress_container
+{
+    width: 40vw;
+    position: relative;
+}
+
+.progress_container .circles
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    top: -14px;
+}
+
+
+ .progress_container .progress
+{
+   width: 100%;
+   height: 4px;
+   background-color:var(--line-border-empty);
+   position: absolute;
+   z-index: -1;
+
+}
+ .progress_container .active_progress
+{
+   width: 0;
+   height: 4px;
+   background-color:#3498db;
+   position: absolute;
+   transition: width 0.5s ease;
+
+}
+
+.progress_container .circles .circle
+{
+    border-radius: 50%;
+    background-color: white;
+    color: var(--line-border-empty);
+    border: 3px solid var(--line-border-empty);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress_container .circles .circle.active
+{
+    border-color: var(--line-border-fill);
+    transition: border 1s ease;
+}
+.progress_container .buttons
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 35px;
+}
+
+.progress_container #prev
+{
+    margin-right: 50px;
+}
+
+.progress_container button
+{
+   padding: 10px 25px;
+   border-radius: 10px;
+   border: none;
+   cursor: pointer;
+   color: white;
+   font-weight: bold;
+   background-color:var(--line-border-fill);
+}
+
+.container button:focus,.container button:active
+{
+    outline: none;
+   border: 2px solid #d7dee4;
+   
+}
+
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+  }
+
+  
